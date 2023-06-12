@@ -2,10 +2,7 @@
   become: true
   tasks:
       - name: create new deployment 
-        command: 
-          cmd: kubectl apply -f /home/ubuntu/deployment.yml
-          executable: /snap/bin/kubectl
+        command: /snap/bin/kubectl apply -f /home/ubuntu/deployment.yml
       - name: create new service 
-        command: 
-          cmd: kubectl apply -f /home/ubuntu/service.yml
-          executable: /snap/bin/kubectl
+        command: /snap/bin/kubectl apply -f /home/ubuntu/service.yml
+          
