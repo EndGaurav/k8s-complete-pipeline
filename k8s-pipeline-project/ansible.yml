@@ -1,8 +1,11 @@
 - hosts: all
   become: true
-  become_user: root 
   tasks:
       - name: create new deployment 
-        command: kubectl apply -f /home/ubuntu/deployment.yml
+        command: 
+          cmd: kubectl apply -f /home/ubuntu/deployment.yml
+          executable: /snap/bin/kubectl
       - name: create new service 
-        command: kubectl apply -f /home/ubuntu/service.yml
+        command: 
+          cmd: kubectl apply -f /home/ubuntu/service.yml
+          executable: /snap/bin/kubectl
